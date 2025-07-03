@@ -225,6 +225,8 @@ log(`String [${string5_1}] after function vanskeligToGøy() - [` + vanskeligToG�
 log(`String [${string5_2}] after function vanskeligToGøy() - [` + vanskeligToGøy(string5_2) + "]");
 log(`String [${string5_3}] after function vanskeligToGøy() - [` + vanskeligToGøy(string5_3) + "]");
 
+separator();
+
 /******************************************************************************
 6.
 
@@ -249,6 +251,28 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 ******************************************************************************/
 
 // Skriv koden for oppgave 6 her
+
+// copy array
+let array6 = items;
+log("Original array : [" + array6 + "]");
+// remove item with first id
+array6 = array6.filter((item, index) => index !== 0);
+log("The array with first element is removed : [" + array6 + "]");
+// change first "Viskelær" to "Linjal"
+array6[array6.indexOf("Viskelær")] = "Linjal";
+log(`"Viskelær" is replaced with "Linjal": [${array6}]`);
+// replace items "Penn" and "Notatbok" with "Markeringspenn"
+array6.splice(0,2, "Markeringspenn");
+log("The array after Penn and Notatbok are replaced with Markeringspenn : [" + array6 + "]");
+// array to string with " | " as separator
+array6 = array6.join(" | ");
+log("The array is converted to string with | as separator : " + `"${array6}"`);
+
+log(" ");
+// new array where "e" exists in words
+array6_extra = items;
+array6_extra = array6_extra.filter((item) => item.includes("e"));
+log("New array only with words include letter e : [" + array6_extra + "]");
 
 /******************************************************************************
 7.
