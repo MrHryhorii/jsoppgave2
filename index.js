@@ -79,6 +79,8 @@ const newString2 = getUpperCased(taskString2);
 const message2 = `String "${taskString2}" after function getUpperCased() is "${newString2}"`;
 log(message2);
 
+separator();
+
 /******************************************************************************
 3.
 
@@ -102,6 +104,55 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
 ******************************************************************************/
 
 // Skriv koden for oppgave 3 her
+
+function greetWithTime(name, time){
+
+    let msg;
+
+    switch (true){
+        case (time >= 0 && time <= 5):
+            msg = `Good night ${name}!`;
+            break;
+        case (time >= 6 && time <= 11):
+            msg = `Good morning ${name}!`;
+            break;
+        case (time >= 12 && time <= 17):
+            msg = `Good day ${name}!`;
+            break;
+        case (time >= 18 && time <= 23):
+            msg = `Good evening ${name}!`;
+            break;
+        case (typeof time == 'undefined'):
+            msg = "Error: time is undefined!";
+            break;
+        default:
+            msg = "Not correct time!";
+    }
+
+    return msg;
+}
+
+const name3 = "John";
+const time3_1 = 10;
+const time3_2 = 12;
+const time3_3 = -5;
+const time3_4 = 27;
+let message3 = "";
+
+message3 = greetWithTime(name3, time3_1);
+log(`Message if time is ${time3_1} : `  + message3);
+
+message3 = greetWithTime(name3, time3_2);
+log(`Message if time is ${time3_2} : `  + message3);
+
+message3 = greetWithTime(name3, time3_3);
+log(`Message if time is ${time3_3} : `  + message3);
+
+message3 = greetWithTime(name3, time3_4);
+log(`Message if time is ${time3_4} : `  + message3);
+
+message3 = greetWithTime(name3);
+log(`Message if time is undefined : `  + message3);
 
 /******************************************************************************
 4.
