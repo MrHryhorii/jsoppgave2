@@ -52,6 +52,8 @@ let isOdd = checkResult1 == "odd" ? true : false;
 const message1 = isOdd ? `Number ${checkNumber1} is odd.` : `Number ${checkNumber1} is even.`
 log(message1);
 
+separator();
+
 /******************************************************************************
 2.
 
@@ -65,6 +67,17 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
 ******************************************************************************/
 
 // Skriv koden for oppgave 2 her
+function getUpperCased(string){
+    let newString = string.toUpperCase();
+    newString += "!";
+    return newString;
+}
+
+const taskString2 = "Dette er kult";
+const newString2 = getUpperCased(taskString2);
+
+const message2 = `String "${taskString2}" after function getUpperCased() is "${newString2}"`;
+log(message2);
 
 /******************************************************************************
 3.
