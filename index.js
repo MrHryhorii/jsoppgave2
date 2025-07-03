@@ -111,16 +111,16 @@ function greetWithTime(name, time){
 
     switch (true){
         case (time >= 0 && time <= 5):
-            msg = `Good night ${name}!`;
+            msg = `Good night, ${name}!`;
             break;
         case (time >= 6 && time <= 11):
-            msg = `Good morning ${name}!`;
+            msg = `Good morning, ${name}!`;
             break;
         case (time >= 12 && time <= 17):
-            msg = `Good day ${name}!`;
+            msg = `Good day, ${name}!`;
             break;
         case (time >= 18 && time <= 23):
-            msg = `Good evening ${name}!`;
+            msg = `Good evening, ${name}!`;
             break;
         case (typeof time == 'undefined'):
             msg = "Error: time is undefined!";
@@ -272,7 +272,9 @@ log(" ");
 // new array where "e" exists in words
 array6_extra = items;
 array6_extra = array6_extra.filter((item) => item.includes("e"));
-log("New array only with words include letter e : [" + array6_extra + "]");
+log("New array from original only with words include letter e : [" + array6_extra + "]");
+
+separator();
 
 /******************************************************************************
 7.
@@ -299,7 +301,30 @@ Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
 ******************************************************************************/
 
 // Skriv koden for oppgave 7 her
+function addOrRemove(arr, str){
+    let newArray;
+    let isIncludes = false;
+    //
+    newArray = arr;
+    isIncludes = arr.includes(str);
+    //
+    if(isIncludes){
+        newArray = newArray.filter(item => item !== str);
+    }
+    else
+    {
+        newArray.push(str);
+    }
+    //
+    return newArray;
+}
 
+//
+const array7_1 = addOrRemove(["Rød", "Grønn"], "Blå");
+log(`Function accepts (["Rød", "Grønn"], "Blå") and return: [${array7_1}]`);
+//
+const array7_2 = addOrRemove(array7_1, "Grønn");
+log(`Function accepts ([${array7_1}], "Grønn") and return: [${array7_2}]`);
 /******************************************************************************
 8.
 
