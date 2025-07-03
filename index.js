@@ -186,6 +186,8 @@ const array4_2 = ["En", "To", "Tre", "Fire", "Fem", "Seks"];
 log(`Array [${array4_1}] after function cutArray() - [` + cutArray(array4_1) + "]");
 log(`Array [${array4_2}] after function cutArray() - [` + cutArray(array4_2) + "]");
 
+separator();
+
 /******************************************************************************
 5.
 
@@ -206,6 +208,22 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 ******************************************************************************/
 
 // Skriv koden for oppgave 5 her
+
+function vanskeligToGøy(str){
+    let newString = str;
+    const trimmed = newString.trim();                       // return the trimmed string
+    const replaced = trimmed.replace("vanskelig", "gøy");   // return the string with replaced word "vanskelig" to "gøy"
+
+    return replaced;
+}
+
+const string5_1 = "  Javascript er vanskelig   ";
+const string5_2 = " Det er vanskelig å bruke metoder ";
+const string5_3 = "   vanskelig        ";
+
+log(`String [${string5_1}] after function vanskeligToGøy() - [` + vanskeligToGøy(string5_1) + "]");
+log(`String [${string5_2}] after function vanskeligToGøy() - [` + vanskeligToGøy(string5_2) + "]");
+log(`String [${string5_3}] after function vanskeligToGøy() - [` + vanskeligToGøy(string5_3) + "]");
 
 /******************************************************************************
 6.
