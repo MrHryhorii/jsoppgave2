@@ -110,6 +110,9 @@ function greetWithTime(name, time){
     let msg;
 
     switch (true){
+        case (typeof time == 'undefined'):
+            msg = "Error: time is undefined!";
+            break;
         case (time >= 0 && time <= 5):
             msg = `Good night, ${name}!`;
             break;
@@ -121,9 +124,6 @@ function greetWithTime(name, time){
             break;
         case (time >= 18 && time <= 23):
             msg = `Good evening, ${name}!`;
-            break;
-        case (typeof time == 'undefined'):
-            msg = "Error: time is undefined!";
             break;
         default:
             msg = "Not correct time!";
@@ -253,7 +253,7 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 // Skriv koden for oppgave 6 her
 
 // copy array
-let array6 = items;
+let array6 = [...items];
 log("Original array : [" + array6 + "]");
 // remove item with first id
 array6 = array6.filter((item, index) => index !== 0);
@@ -270,7 +270,7 @@ log("The array is converted to string with | as separator : " + `"${array6}"`);
 
 log(" ");
 // new array where "e" exists in words
-array6_extra = items;
+array6_extra = [...items];
 array6_extra = array6_extra.filter((item) => item.includes("e"));
 log("New array from original only with words include letter e : [" + array6_extra + "]");
 
@@ -305,7 +305,7 @@ function addOrRemove(arr, str){
     let newArray;
     let isIncludes = false;
     //
-    newArray = arr;
+    newArray = [...arr];
     isIncludes = arr.includes(str);
     //
     if(isIncludes){
@@ -363,7 +363,7 @@ function explaneWithEnglish(data){
             msg = "😎" + data + "😎";
             break;
         case(typeof data == "number"):
-            msg =  "😎" + data * data + "😎";
+            msg =  "😎" + data * 2 + "😎";
             break;
         case(typeof data == "boolean"):
             if(data){
