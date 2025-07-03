@@ -151,8 +151,10 @@ log(`Message if time is ${time3_3} : `  + message3);
 message3 = greetWithTime(name3, time3_4);
 log(`Message if time is ${time3_4} : `  + message3);
 
-message3 = greetWithTime(name3);
+message3 = greetWithTime(name3); 
 log(`Message if time is undefined : `  + message3);
+
+separator();
 
 /******************************************************************************
 4.
@@ -170,6 +172,19 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 ******************************************************************************/
 
 // Skriv koden for oppgave 4 her
+
+function cutArray(arr){
+    let newArray = arr;
+    newArray.shift(); // remove first item
+    newArray.pop();   // remove last item
+    return newArray;
+}
+
+const array4_1 = ["Rød", "Grønn", "Blå", "Gul"];
+const array4_2 = ["En", "To", "Tre", "Fire", "Fem", "Seks"];
+
+log(`Array [${array4_1}] after function cutArray() - [` + cutArray(array4_1) + "]");
+log(`Array [${array4_2}] after function cutArray() - [` + cutArray(array4_2) + "]");
 
 /******************************************************************************
 5.
