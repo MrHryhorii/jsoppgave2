@@ -41,6 +41,16 @@ funksjonen)
 ******************************************************************************/
 
 // Skriv koden for oppgave 1 her
+function oddOrEven(number) {
+  return ( number & 1 ) ? "odd" : "even";
+}
+
+checkNumber1 = 5;
+const checkResult1 = oddOrEven(checkNumber1);
+let isOdd = checkResult1 == "odd" ? true : false;
+
+const message1 = isOdd ? `Number ${checkNumber1} is odd.` : `Number ${checkNumber1} is even.`
+log(message1);
 
 /******************************************************************************
 2.
