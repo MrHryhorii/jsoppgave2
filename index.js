@@ -321,10 +321,12 @@ function addOrRemove(arr, str){
 
 //
 const array7_1 = addOrRemove(["Rød", "Grønn"], "Blå");
-log(`Function accepts (["Rød", "Grønn"], "Blå") and return: [${array7_1}]`);
+log(`Function accepts (["Rød", "Grønn"], "Blå") and returns: [${array7_1}]`);
 //
 const array7_2 = addOrRemove(array7_1, "Grønn");
-log(`Function accepts ([${array7_1}], "Grønn") and return: [${array7_2}]`);
+log(`Function accepts ([${array7_1}], "Grønn") and returns: [${array7_2}]`);
+
+separator();
 /******************************************************************************
 8.
 
@@ -352,3 +354,39 @@ Returner "😎Kun primitive verdier😎".
 ******************************************************************************/
 
 // Skriv koden for oppgave 8 her
+
+function explaneWithEnglish(data){
+    let msg;
+
+    switch(true){
+        case (typeof data == "string"):
+            msg = "😎" + data + "😎";
+            break;
+        case(typeof data == "number"):
+            msg =  "😎" + data * data + "😎";
+            break;
+        case(typeof data == "boolean"):
+            if(data){
+                msg = "😎Ja😎";
+            }
+            else
+            {
+                msg = "😎Slapp av😎";
+            }
+            break;
+        default:
+            msg = "😎Kun primitive verdier😎";
+    }
+        
+    return msg;
+}
+
+const testData8_1 = "Goodbye, World!"
+const testData8_2 = 16;
+const testData8_3 = false;
+const testData8_4 = ["Goodbye", "World!"];
+
+log(`Type function with data - |${testData8_1}| returns: ${explaneWithEnglish(testData8_1)}`);
+log(`Type function with data - |${testData8_2}| returns: ${explaneWithEnglish(testData8_2)}`);
+log(`Type function with data - |${testData8_3}| returns: ${explaneWithEnglish(testData8_3)}`);
+log(`Type function with data - |[${testData8_4}]| returns: ${explaneWithEnglish(testData8_4)}`);
